@@ -4,7 +4,7 @@
 This course is based on: 
 Software Carpentries [Intro to HPC](https://github.com/carpentries-incubator/hpc-intro/) and HPC Carpentries [HPC Intro to Shell](https://github.com/hpc-carpentry/hpc-shell/)
 
-This course and the contents of this repository are under CC-BY 4.0 liscence. 
+This course and the contents of this repository are under CC-BY 4.0 license. 
 
 AI was used to help in the creation of this course, to structure the lesson, create the scripts and exercises, refine the learning objectives, and prepare the readme files. 
 
