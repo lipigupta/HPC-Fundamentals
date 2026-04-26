@@ -1,0 +1,5 @@
+name: hpc-fundamentals
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11

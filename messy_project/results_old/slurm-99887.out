@@ -1,0 +1,6 @@
+Job started on Mon Apr 22 09:12:11
+Running on host: nid00077
+
+Segmentation fault (core dumped)
+
+slurmstepd: error: Detected 1 oom-kill event(s)

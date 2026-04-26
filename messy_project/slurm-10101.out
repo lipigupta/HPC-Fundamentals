@@ -1,0 +1,18 @@
+Job started on Tue Apr 23 10:15:01
+Running on host: nid00123
+Working directory: /global/homes/u/user/project
+
+Loading modules...
+Starting training job...
+Loading synthetic training data...
+
+Epoch 1: loss=0.8123
+Epoch 2: loss=0.6231
+Epoch 3: loss=0.5112
+Epoch 4: loss=0.4321
+Epoch 5: loss=0.3987
+
+Training complete.
+{'final_loss': 0.3987, 'status': 'success'}
+
+Job ended on Tue Apr 23 10:15:12

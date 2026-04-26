@@ -1,0 +1,23 @@
+Job started on Tue Apr 23 11:02:44
+Running on host: nid00456
+Working directory: /global/homes/u/user/project
+
+Loading modules...
+Starting training job...
+Loading synthetic training data...
+
+Epoch 1: loss=0.8452
+Epoch 2: loss=0.7011
+Epoch 3: loss=0.5894
+Epoch 4: loss=0.5123
+Epoch 5: loss=0.4778
+
+Training complete.
+
+Traceback (most recent call last):
+  File "run_broken.py", line 26, in <module>
+    print(result)
+NameError: name 'result' is not defined
+
+srun: error: nid00456: task 0: Exited with exit code 1
+srun: Terminating StepId=10102.0
