@@ -44,9 +44,9 @@ You should see:
 ```text
 README.md
 environment/
+example/
 instructor/
 messy_project/
-python_black_box/
 slurm_scripts/
 ```
 
@@ -101,25 +101,23 @@ The point for today is simple: organized files are easier to understand, easier 
 
 ```bash
 cd ~/hpc_fundamentals
-ls python_black_box
+ls example/
 ```
 
 You should see:
 
 ```text
-run_broken.py
-run_success.py
-scale_demo.py
+01_demo.py
+02_demo.py
+03_demo.py
 ```
 
-The broken script is meant to fail. It produces output that looks successful at first, then crashes because of a small Python error.
-
-## 6. Submit the broken batch job
+## 6. Submit the first demo script.
 
 ```bash
 cd ~/hpc_fundamentals/slurm_scripts
-cat 01_broken_batch.slurm
-sbatch 01_broken_batch.slurm
+cat 01_batch.slurm
+sbatch 01_batch.slurm
 squeue -u $USER
 ```
 
@@ -133,16 +131,16 @@ Your instructor will provide the exact `salloc` command for the training system 
 salloc --nodes=1 --ntasks=1 --cpus-per-task=1 --time=00:05:00
 ```
 
-Once inside the allocation, try running the broken script directly:
+Once inside the allocation, try running the first demo directly:
 
 ```bash
-python ../python_black_box/run_broken.py
+python ../example/01_demo.py
 ```
 
 Then try running it through Slurm:
 
 ```bash
-srun python ../python_black_box/run_broken.py
+srun python ../example/01_demo.py
 ```
 
 For this simple example, the output may look very similar.
@@ -162,7 +160,7 @@ exit
 
 ```bash
 ls slurm-*.out
-less slurm-broken-python-<jobid>.out
+less 01_demo-<jobid>.out
 ```
 
 In `less`:
@@ -178,7 +176,7 @@ Look for this pattern:
 Training complete.
 
 Traceback (most recent call last):
-  File "../python_black_box/run_broken.py", line 26, in <module>
+  File "../example/01_demo.py", line 26, in <module>
     print(result)
 NameError: name 'result' is not defined
 ```
@@ -194,7 +192,7 @@ The actual problem is not “Slurm failed.” The application failed, and Slurm 
 ## 9. Fix the Python error
 
 ```bash
-nano ../python_black_box/run_broken.py
+nano ../example/01_demo.py
 ```
 
 Find this line:
@@ -212,22 +210,22 @@ print(results)
 Save and exit, then test it interactively:
 
 ```bash
-python ../python_black_box/run_broken.py
+python ../example/01_demo.py
 ```
 
 ## 10. Resubmit the fixed job
 
 ```bash
-sbatch 01_broken_batch.slurm
+sbatch 01_demo.slurm
 squeue -u $USER
 ls slurm-*.out
-less slurm-broken-python-<jobid>.out
+less 01_demo-<jobid>.out
 ```
 
 Or submit the provided fixed version:
 
 ```bash
-sbatch 02_fixed_batch.slurm
+sbatch 02_demo.slurm
 ```
 
 This time, the script should finish without the Python traceback.
