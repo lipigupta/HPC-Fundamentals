@@ -1,6 +1,14 @@
 # HPC Fundamentals: First Job on a Shared System
 
-## Story for this training
+## Sources and AI-usage disclosure
+This course is based on: 
+Software Carpentries [Intro to HPC](https://github.com/carpentries-incubator/hpc-intro/) and HPC Carpentries [HPC Intro to Shell](https://github.com/hpc-carpentry/hpc-shell/)
+
+This course and the contents of this repository are under CC-BY 4.0 liscence. 
+
+AI was used to help in the creation of this course, to structure the lesson, create the scripts and exercises, refine the learning objectives, and prepare the readme files. 
+
+## Story for this trainin
 
 You are a new student or intern joining a research project. A collaborator has given you a messy project directory that contains data files, scripts, notes, old job outputs, and temporary files.
 
