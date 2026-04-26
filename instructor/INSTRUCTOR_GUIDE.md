@@ -100,7 +100,7 @@ Add site-specific quota command if desired.
 
 ## Broken job teaching point
 
-The intentional error is in `python_black_box/run_broken.py`:
+The intentional error is in `examplex/01_demo.py`:
 
 ```python
 print(result)
@@ -131,7 +131,7 @@ Inside a simple single-task allocation, they may look similar. For parallel jobs
 
 ## CPU scaling demo
 
-`python_black_box/scale_demo.py` reads `SLURM_CPUS_PER_TASK` and uses that many Python worker processes.
+`example/01_demo.py` reads `SLURM_CPUS_PER_TASK` and uses that many Python worker processes.
 
 Expected approximate runtimes:
 
