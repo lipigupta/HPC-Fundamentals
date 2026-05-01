@@ -15,7 +15,7 @@ Epoch 5: loss=0.4778
 Training complete.
 
 Traceback (most recent call last):
-  File "run_broken.py", line 26, in <module>
+  File "myapp.py", line 26, in <module>
     print(result)
 NameError: name 'result' is not defined
 
