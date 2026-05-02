@@ -60,6 +60,9 @@ srun: Terminating StepId=10102.0
 
 >Answer: line 55 begins the Traceback which is how Python displays error messages, and explicitly shows where in the application the error lies (which is usually a clue as to how to fix the issue.)
 
+## Activity
+Create a simple troubleshooting flowchart that a NERSC user could use to aid in finding the source of an error after a job fails. Start with the initial step of determining if an error took place, and then include at least 2 common sources of errors. The flowchart should consist of how to proceed if either of the sources is identified as the issue. 
+
 ## Rubric
 
 | Criterion                                                                   | Proficient                                                                                                                                                                                                       | Intermediate                                                                                                                                                      | Novice                                                                                                                                               | Not completed                                                                                                                        |
