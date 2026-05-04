@@ -8,7 +8,7 @@ This course and the contents of this repository are under CC-BY 4.0 license.
 
 AI was used to help in the creation of this course, to structure the lesson, create the scripts and exercises, refine the learning objectives, and prepare the readme files. 
 
-## Story for this trainin
+## Setting the Scene
 
 You are a new student or intern joining a research project. A collaborator has given you a messy project directory that contains data files, scripts, notes, old job outputs, and temporary files.
 
