@@ -28,6 +28,10 @@ By the end of this session, you should be able to:
 - Read Slurm output files and distinguish application errors from scheduler messages.
 - Recognize that resource requests should match what your code can use.
 
+## Resources
+[NERSC Documentation](https://docs.nersc.gov/)
+[Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/)
+
 ## 0. Before the workshop
 
 You should already be able to log in to the NERSC system before this session starts. We will not spend much time troubleshooting accounts, MFA, or SSH setup during the workshop.
