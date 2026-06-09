@@ -17,6 +17,7 @@ echo "Working directory: $(pwd)"
 echo "SLURM_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK"
 echo
 
+module load python
 python ../example/01_demo.py
 
 echo
