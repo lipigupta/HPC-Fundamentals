@@ -17,7 +17,8 @@ echo "Working directory: $(pwd)"
 echo "SLURM_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK"
 echo
 
-python ../python_black_box/scale_demo.py
+module load python
+python ../example/03_demo.py
 
 echo
 echo "Job ended on $(date)"
