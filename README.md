@@ -35,15 +35,16 @@ You should already be able to log in to the NERSC system before this session sta
 ## 1. Log in and create a workspace
 
 ```bash
-mkdir -p ~/hpc_fundamentals
-cd ~/hpc_fundamentals
+cd $CFS/ntrain1
+mkdir <myname>
 pwd
 ```
 
 Your instructor will tell you where the shared training files are located. Copy them into your workspace.
 
 ```bash
-cp -r /path/to/shared/hpc_fundamentals_training_scaffold/* ~/hpc_fundamentals/
+mkdir 
+cp -r /global/cfs/cdirs/ntrain1/RO_HPC_Fundamentals/ <myname>
 ls
 ```
 
@@ -61,7 +62,7 @@ slurm_scripts/
 ## 2. The inherited messy project
 
 ```bash
-cd ~/hpc_fundamentals/messy_project
+cd ~/messy_project/
 pwd
 ls
 ls -l
@@ -75,22 +76,6 @@ This directory represents a common situation: someone has shared a project direc
 ## 3. Organize the project enough to work with it
 
 This is not about designing the perfect file structure. The goal is to practice terminal basics and get the directory into a usable state.
-
-```bash
-mkdir data scripts results logs notes archive
-mv data_final_FINAL.txt data/data_final.txt
-mv data1.txt data/data_raw.txt
-mv script.sh scripts/
-mv slurm-10101.out results/
-mv slurm-10102.out results/
-mv notes.txt notes/
-mv random_notes/meeting_notes.txt notes/
-mv README_old.md archive/
-mv backup/data_copy.txt archive/backup_data_copy.txt
-rmdir backup
-rmdir random_notes
-find . -maxdepth 2
-```
 
 Your organization may look different from someone else’s. That is okay.
 
