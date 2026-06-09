@@ -3,11 +3,11 @@
 # It contains commands learners can copy/paste during the interactive allocation activity.
 
 # Example:
-# salloc --nodes=1 --ntasks=1 --cpus-per-task=1 --time=00:05:00
-
+# salloc --account=ntrain1 --constraint cpu --qos interactive --nodes 1 --ntasks 1 --cpus-per-task 8 --time=00:10:00 --reservation=hpcfun
 # Once inside the allocation:
-# python ../python_black_box/run_broken.py
-# srun python ../python_black_box/run_broken.py
+# module load python
+# python 01_demo.py
+# srun python 01_demo.py
 
 # When done:
 # exit
