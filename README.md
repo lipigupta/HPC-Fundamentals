@@ -90,10 +90,12 @@ du -sh *
 
 The point for today is simple: organized files are easier to understand, easier to debug, and easier to clean up when you are working on a shared system.
 
+#Stop here - do not go further until instructed
+
 ## 5. Move to the Python workload
 
 ```bash
-cd ~/hpc_fundamentals
+cd ..
 ls example/
 ```
 
@@ -108,7 +110,7 @@ You should see:
 ## 6. Submit the first demo script.
 
 ```bash
-cd ~/hpc_fundamentals/slurm_scripts
+cd examples/
 cat 01_batch.slurm
 sbatch 01_batch.slurm
 squeue -u $USER
@@ -121,7 +123,7 @@ This job may finish quickly. If it disappears from the queue, that usually means
 Your instructor will provide the exact `salloc` command for the training system or reservation. A generic example looks like this:
 
 ```bash
-salloc --nodes=1 --ntasks=1 --cpus-per-task=1 --time=00:05:00
+salloc --account=nstaff --constraint cpu --qos shared --nodes 1 --ntasks 1 --cpus-per-task 2 --time=00:20:00
 ```
 
 Once inside the allocation, try running the first demo directly:
@@ -182,25 +184,7 @@ Important lesson:
 
 The actual problem is not “Slurm failed.” The application failed, and Slurm reported that the task exited with an error code.
 
-## 9. Fix the Python error
-
-```bash
-nano ../example/01_demo.py
-```
-
-Find this line:
-
-```python
-print(result)
-```
-
-Change it to:
-
-```python
-print(results)
-```
-
-Save and exit, then test it interactively:
+## 9. Fix the Python error then test it interactively.
 
 ```bash
 python ../example/01_demo.py
