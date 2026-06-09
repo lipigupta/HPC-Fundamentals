@@ -18,21 +18,6 @@ The course is intentionally workflow-first:
 8. Fix the application error.
 9. See a small resource-scaling example.
 
-## Suggested timing for a 3-hour session
-
-| Segment | Time |
-|---|---:|
-| Welcome, goals, SSH check | 10 min |
-| Copy scaffold and create workspace | 10 min |
-| Terminal basics through messy project | 35 min |
-| Quota/storage preview | 5 min |
-| Batch job setup and submission | 20 min |
-| Interactive allocation and `python` vs `srun` | 25 min |
-| Read failed Slurm output | 25 min |
-| Fix and resubmit | 20 min |
-| CPU scaling teaser | 20 min |
-| Wrap-up and bridge to New User Training | 10 min |
-
 ## Messy directory answer key
 
 This is one possible solution. Do not present it as the only correct solution.
