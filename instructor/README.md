@@ -44,9 +44,10 @@ messy_project/
 ├── archive/
 │   ├── backup_data_copy.txt
 │   └── README_old.md
+├── results_old/
+│   └── output_old.txt
 └── temp/
-    └── scratch/
-        └── old_runs/
+    └── junk.tmp
 ```
 
 Command sequence:

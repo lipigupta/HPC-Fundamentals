@@ -21,4 +21,4 @@
 
 - Add per-module reference guides for use after Canvas access ends.
 - Replace the Module 4 sleep demo with a real serial/parallel computation and timing activity, including a 16-CPU case.
-- Review the capstone's current Canvas placement and prerequisites; no notebook has been added
+- Review the capstone's current Canvas placement and prerequisites; no notebook has been added.

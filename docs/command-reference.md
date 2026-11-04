@@ -58,7 +58,9 @@ Be careful with `rm -r directory_name`: it removes the directory and everything 
 | `tail filename` | Prints the last ten lines by default. | `tail notes.txt` |
 | `grep pattern filename` | Prints lines matching a pattern. | `grep Runtime slurm-scale-*.out` |
 
-### Moving around in less
+<br>
+
+## Moving around in `less`
 
 | Key | What it does |
 |---|---|

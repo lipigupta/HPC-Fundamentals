@@ -20,9 +20,9 @@ By the end of this course, you should be able to:
 
 ## Resources
 
-- [Command Reference](docs/command-reference.md)
 - [NERSC Documentation](https://docs.nersc.gov/)
 - [Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/)
+- [Command Reference](docs/command-reference.md)
 - [Instructor guide](instructor/README.md)
 - *[Canvas mapping and migration checklist](docs/canvas-map.md)*
 
@@ -37,7 +37,7 @@ By the end of this course, you should be able to:
 | Module 3: Running Jobs | [Batch, interactive, and debugging exercises](module-03-running-jobs/README.md) |
 | Module 4: Using Resources Effectively | [Existing CPU scaling demonstration](module-04-using-resources-effectively/README.md) |
 
-<b>
+<br>
 
 ## Before the workshop
 
@@ -119,10 +119,11 @@ This course is not about memorizing every command. The goal is to practice a com
 
 <br>
 
-s<br>
+<br>
 
 ## Sources and Disclosure
-This course is based on: Software Carpentries [Intro to HPC](https://github.com/carpentries-incubator/hpc-intro/) and HPC Carpentries [HPC Intro to Shell](https://github.com/hpc-carpentry/hpc-shell/)
+
+This course is based on: Software Carpentry [Intro to HPC](https://github.com/carpentries-incubator/hpc-intro/) and HPC Carpentries [HPC Intro to Shell](https://github.com/hpc-carpentry/hpc-shell/)
 
 This course and the contents of this repository are under CC-BY 4.0 license.
 

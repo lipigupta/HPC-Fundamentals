@@ -14,7 +14,7 @@ cat batch.slurm
 
 You should see `README.md`, `workload.py`, `batch.slurm`, and `interactive.sh`. The Python file contains the work to be done. The batch script describes the resources requested and the commands to run.
 
-Before submitting, add the account, QOS, constraint, and reservation directives supplied by your instructor. Submit from this exercise directory so the script can find `workload.py`
+Before submitting, add the account, QOS, constraint, and reservation directives supplied by your instructor. Submit from this exercise directory so the script can find `workload.py`.
 
 <br>
 
