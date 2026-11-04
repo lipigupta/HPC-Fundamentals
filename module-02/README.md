@@ -28,6 +28,6 @@ Follow Canvas for lesson order and assessment requirements.
 
 ## Navigation
 
-- **Next module:** [Module 3: Running Jobs](../module-03-running-jobs/README.md)
-- **Previous module:** [Module 1: NERSC Overview](../module-01-nersc-overview/README.md)
+- **Next module:** [Module 3: Running Jobs](../module-03/README.md)
+- **Previous module:** [Module 1: NERSC Overview](../module-01/README.md)
 - **Course:** [Course Home](../README.md)

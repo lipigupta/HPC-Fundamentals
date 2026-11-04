@@ -91,7 +91,7 @@ Run these commands on the training system. Use the account, QOS, constraint, and
 |---|---|---|
 | `sbatch job_script.slurm` | Submits a batch script and prints a job ID. | `sbatch batch.slurm` |
 | `squeue -u "$USER"` | Shows your jobs currently listed in the queue. `$USER` expands to your username. | `squeue -u "$USER"` |
-| `salloc [options]` | Requests an interactive allocation. Replace `[options]` with instructor-provided resource and account settings. | See the [interactive allocation guidance](../module-03-running-jobs/exercises/batch-and-interactive-jobs/README.md#3-try-an-interactive-allocation). |
+| `salloc [options]` | Requests an interactive allocation. Replace `[options]` with instructor-provided resource and account settings. | See the [interactive allocation guidance](../module-03/exercises/batch-and-interactive-jobs/README.md#3-try-an-interactive-allocation). |
 | `srun command` | Launches a job step using Slurm resources. | Inside your allocation: `srun python workload.py` |
 | `exit` | Leaves the current shell; use it to finish the allocation shell when instructed. | `exit` |
 
@@ -101,4 +101,4 @@ A job leaving the queue does not establish success. Find the output file using t
 
 > Slurm launched the job. The Python application crashed.
 
-A Python traceback helps you identify an application error. See [Diagnose and fix](../module-03-running-jobs/exercises/diagnose-and-fix/README.md) for the guided example.
+A Python traceback helps you identify an application error. See [Diagnose and fix](../module-03/exercises/diagnose-and-fix/README.md) for the guided example.

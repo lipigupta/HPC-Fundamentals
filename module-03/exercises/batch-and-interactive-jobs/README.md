@@ -5,7 +5,7 @@
 Start from the repository root (`HPC-Fundamentals`) on the training system:
 
 ```bash
-cd module-03-running-jobs/exercises/batch-and-interactive-jobs
+cd module-03/exercises/batch-and-interactive-jobs
 pwd
 ls
 cat workload.py
@@ -91,6 +91,6 @@ You are finished when you can locate your batch output and explain the differenc
 ## Navigation
 
 - **Next:** [Diagnose and fix](../diagnose-and-fix/README.md)
-- **Previous:** [Organize a project](../../../module-02-text-terminal-basics/exercises/organize-a-project/README.md)
+- **Previous:** [Organize a project](../../../module-02/exercises/organize-a-project/README.md)
 - **Module:** [Module 3: Running Jobs](../../README.md)
 - **Course:** [Course Home](../../../README.md)

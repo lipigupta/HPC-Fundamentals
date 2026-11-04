@@ -16,5 +16,5 @@ Follow Canvas for lesson order and assessment requirements.
 
 ## Navigation
 
-- **Previous module:** [Module 3: Running Jobs](../module-03-running-jobs/README.md)
+- **Previous module:** [Module 3: Running Jobs](../module-03/README.md)
 - **Course:** [Course Home](../README.md)

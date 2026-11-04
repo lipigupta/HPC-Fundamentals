@@ -31,6 +31,6 @@ The point for today is simple: run your code, read the output, fix errors, and t
 
 ## Navigation
 
-- **Next module:** [Module 4: Using Resources Effectively](../module-04-using-resources-effectively/README.md)
-- **Previous module:** [Module 2: Text Terminal Basics](../module-02-text-terminal-basics/README.md)
+- **Next module:** [Module 4: Using Resources Effectively](../module-04/README.md)
+- **Previous module:** [Module 2: Text Terminal Basics](../module-02/README.md)
 - **Course:** [Course Home](../README.md)

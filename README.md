@@ -32,10 +32,10 @@ By the end of this course, you should be able to:
 
 | Canvas module | Materials |
 |---|---|
-| Module 1: NERSC Overview | [Overview](module-01-nersc-overview/README.md) |
-| Module 2: Text Terminal Basics | [Terminal practice](module-02-text-terminal-basics/README.md) |
-| Module 3: Running Jobs | [Batch, interactive, and debugging exercises](module-03-running-jobs/README.md) |
-| Module 4: Using Resources Effectively | [Existing CPU scaling demonstration](module-04-using-resources-effectively/README.md) |
+| Module 1: NERSC Overview | [Overview](module-01/README.md) |
+| Module 2: Text Terminal Basics | [Terminal practice](module-02/README.md) |
+| Module 3: Running Jobs | [Batch, interactive, and debugging exercises](module-03/README.md) |
+| Module 4: Using Resources Effectively | [Existing CPU scaling demonstration](module-04/README.md) |
 
 <br>
 
@@ -99,10 +99,10 @@ README.md
 docs/
 environment/
 instructor/
-module-01-nersc-overview/
-module-02-text-terminal-basics/
-module-03-running-jobs/
-module-04-using-resources-effectively/
+module-01/
+module-02/
+module-03/
+module-04/
 ```
 
 This directory is the **repository root**. When an exercise says to start from the repository root, it means this `HPC-Fundamentals` directory. Use `pwd` to check where you are and `ls` to see what is available.

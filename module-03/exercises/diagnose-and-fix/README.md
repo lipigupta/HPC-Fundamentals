@@ -9,7 +9,7 @@ A collaborator's script does not always work the first time. In this activity, y
 Start from the repository root (`HPC-Fundamentals`) on the training system. If you are coming from the previous exercise directory, `cd ../../..` returns you to the repository root.
 
 ```bash
-cd module-03-running-jobs/exercises/diagnose-and-fix
+cd module-03/exercises/diagnose-and-fix
 cat batch.slurm
 ```
 
@@ -104,7 +104,7 @@ You are finished when you can explain the error, show the corrected result, and 
 
 ## Navigation
 
-- **Next:** [Module 4: Using Resources Effectively](../../../module-04-using-resources-effectively/README.md)
+- **Next:** [Module 4: Using Resources Effectively](../../../module-04/README.md)
 - **Previous:** [Batch and interactive jobs](../batch-and-interactive-jobs/README.md)
 - **Module:** [Module 3: Running Jobs](../../README.md)
 - **Course:** [Course Home](../../../README.md)

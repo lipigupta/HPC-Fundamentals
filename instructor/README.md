@@ -53,7 +53,7 @@ messy_project/
 Command sequence:
 
 ```bash
-cd module-02-text-terminal-basics/exercises/organize-a-project/messy_project
+cd module-02/exercises/organize-a-project/messy_project
 mkdir data scripts results logs notes archive
 mv data_final_FINAL.txt data/data_final.txt
 mv data1.txt data/data_raw.txt
@@ -94,7 +94,7 @@ Add site-specific quota command if desired.
 
 ## Broken job teaching point
 
-The intentional error is in `module-03-running-jobs/exercises/diagnose-and-fix/workload.py`:
+The intentional error is in `module-03/exercises/diagnose-and-fix/workload.py`:
 
 ```python
 print(result)
@@ -127,7 +127,7 @@ Inside a simple single-task allocation, they may look similar. For parallel jobs
 
 ## CPU scaling demo
 
-`module-04-using-resources-effectively/exercises/cpu-scaling/workload.py` reads `SLURM_CPUS_PER_TASK` and uses that many Python worker processes.
+`module-04/exercises/cpu-scaling/workload.py` reads `SLURM_CPUS_PER_TASK` and uses that many Python worker processes.
 
 Expected approximate runtimes:
 

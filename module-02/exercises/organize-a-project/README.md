@@ -9,7 +9,7 @@ Your collaborator has shared a messy project directory. Organize it so you can f
 Start from the repository root (`HPC-Fundamentals`). You already have your own copy of the course files from the workspace setup. Move into the inherited project and take a look around:
 
 ```bash
-cd module-02-text-terminal-basics/exercises/organize-a-project/messy_project
+cd module-02/exercises/organize-a-project/messy_project
 pwd
 ls
 ls -l
@@ -22,7 +22,7 @@ Here is what each command does:
 
 | Command | What it does |
 |---|---|
-| `cd module-02-text-terminal-basics/exercises/organize-a-project/messy_project` | Moves into the messy project directory from the repository root. `cd` means “change directory.” |
+| `cd module-02/exercises/organize-a-project/messy_project` | Moves into the messy project directory from the repository root. `cd` means “change directory.” |
 | `pwd` | Prints the full path to your current directory so you can check where you are. |
 | `ls` | Lists the names of files and directories in your current directory. |
 | `ls -l` | Shows a detailed listing, including permissions, owner, size in bytes, and modification time. |
@@ -69,6 +69,6 @@ du -sh *
 
 ## Navigation
 
-- **Next:** [Batch and interactive jobs](../../../module-03-running-jobs/exercises/batch-and-interactive-jobs/README.md)
+- **Next:** [Batch and interactive jobs](../../../module-03/exercises/batch-and-interactive-jobs/README.md)
 - **Module:** [Module 2: Text Terminal Basics](../../README.md)
 - **Course:** [Course Home](../../../README.md)

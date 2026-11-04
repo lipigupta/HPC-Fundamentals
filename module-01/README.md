@@ -18,5 +18,5 @@ Follow Canvas for lesson order and assessment requirements.
 
 ## Navigation
 
-- **Next module:** [Module 2: Text Terminal Basics](../module-02-text-terminal-basics/README.md)
+- **Next module:** [Module 2: Text Terminal Basics](../module-02/README.md)
 - **Course:** [Course Home](../README.md)

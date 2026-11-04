@@ -3,7 +3,7 @@
 Start from the repository root on the training system:
 
 ```bash
-cd module-04-using-resources-effectively/exercises/cpu-scaling
+cd module-04/exercises/cpu-scaling
 ```
 
 Review each Slurm script and set the instructor-provided account, QOS, constraint, and reservation directives. Submit from this exercise directory:
@@ -26,6 +26,6 @@ This existing demonstration runs 32 independent one-second sleeps using a proces
 
 ## Navigation
 
-- **Previous:** [Diagnose and fix](../../../module-03-running-jobs/exercises/diagnose-and-fix/README.md)
+- **Previous:** [Diagnose and fix](../../../module-03/exercises/diagnose-and-fix/README.md)
 - **Module:** [Module 4: Using Resources Effectively](../../README.md)
 - **Course:** [Course Home](../../../README.md)
