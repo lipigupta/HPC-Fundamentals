@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=scale-1cpu
+#SBATCH --job-name=02_demo
 #SBATCH --time=00:05:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -18,7 +18,7 @@ echo "SLURM_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK"
 echo
 
 module load python
-python ../example/03_demo.py
+python workload.py
 
 echo
 echo "Job ended on $(date)"

@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Learner practice copies and generated job output
+/work/
+slurm-*.out
+# Preserve intentional job-output fixtures in the starter exercise.
+!module-02-text-terminal-basics/exercises/organize-a-project/messy_project/**/slurm-*.out
+
+# macOS folder metadata
+.DS_Store

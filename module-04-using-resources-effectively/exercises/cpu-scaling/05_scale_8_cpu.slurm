@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=02_demo
+#SBATCH --job-name=scale-8cpu
 #SBATCH --time=00:05:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=8
 #SBATCH --output=slurm-%x-%j.out
 # NERSC users may need project/account/QOS/constraint directives.
 # Example placeholders:
@@ -18,7 +18,7 @@ echo "SLURM_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK"
 echo
 
 module load python
-python ../example/02_demo.py
+python workload.py
 
 echo
 echo "Job ended on $(date)"

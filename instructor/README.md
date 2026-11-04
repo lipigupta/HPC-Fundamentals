@@ -1,6 +1,8 @@
 # Instructor Guide: HPC Fundamentals Scaffold
 
-This guide is for the instructor. The learner-facing guide is `README.md`.
+This guide is for the instructor. The learner-facing guide is [`README.md`](../README.md).
+
+<br>
 
 ## Core narrative
 
@@ -17,6 +19,8 @@ The course is intentionally workflow-first:
 7. Diagnose a failed job by reading Slurm output.
 8. Fix the application error.
 9. See a small resource-scaling example.
+
+<br>
 
 ## Messy directory answer key
 
@@ -48,7 +52,7 @@ messy_project/
 Command sequence:
 
 ```bash
-cd ~/hpc_fundamentals/messy_project
+cd module-02-text-terminal-basics/exercises/organize-a-project/messy_project
 mkdir data scripts results logs notes archive
 mv data_final_FINAL.txt data/data_final.txt
 mv data1.txt data/data_raw.txt
@@ -65,6 +69,8 @@ rmdir random_notes
 ```
 
 Keep this segment focused. The goal is terminal practice and workflow readiness, not a long discussion of file organization philosophy.
+
+<br>
 
 ## Quota/storage preview
 
@@ -83,9 +89,11 @@ du -sh *
 
 Add site-specific quota command if desired.
 
+<br>
+
 ## Broken job teaching point
 
-The intentional error is in `examplex/01_demo.py`:
+The intentional error is in `module-03-running-jobs/exercises/diagnose-and-fix/workload.py`:
 
 ```python
 print(result)
@@ -114,9 +122,11 @@ srun python run.py   # asks Slurm to launch Python using allocated resources
 
 Inside a simple single-task allocation, they may look similar. For parallel jobs or multi-resource jobs, `srun` is the mechanism Slurm uses to launch work across allocated resources.
 
+<br>
+
 ## CPU scaling demo
 
-`example/01_demo.py` reads `SLURM_CPUS_PER_TASK` and uses that many Python worker processes.
+`module-04-using-resources-effectively/exercises/cpu-scaling/workload.py` reads `SLURM_CPUS_PER_TASK` and uses that many Python worker processes.
 
 Expected approximate runtimes:
 
@@ -130,6 +140,8 @@ Teaching point:
 
 > More resources help only when the application can use them.
 
+<br>
+
 ## NERSC-specific adjustments to make before teaching
 
 Review all Slurm scripts and add the correct site-specific directives. Possible examples include:
@@ -141,3 +153,23 @@ Review all Slurm scripts and add the correct site-specific directives. Possible 
 ```
 
 If using a reservation, add the reservation directive provided by NERSC.
+
+<br>
+
+<br>
+
+## Navigation
+
+- **Course:** [Course Home](../README.md)
+
+<br>
+
+<br>
+
+## *Repository maintenance*
+
+Work on feature branches and submit pull requests before merging to main. See [Canvas mapping](../docs/canvas-map.md) for paths that need coordinated Canvas updates.
+
+Solutions are grouped under `solutions/module-03/` and `solutions/module-04/`. These are publicly visible teaching references, not access-controlled answer keys. The Module 2 starter is intentionally messy. Learners organize it directly within their own course copy; no additional practice copy is needed. Run the answer-key commands above from the repository root.
+
+The scaling workload uses sleep calls. Replacing it with real computation and adding a serial counterpart belongs in a separate content change.

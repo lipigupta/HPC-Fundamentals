@@ -6,8 +6,8 @@
 # salloc --account=ntrain1 --constraint cpu --qos interactive --nodes 1 --ntasks 1 --cpus-per-task 8 --time=00:10:00 --reservation=hpcfun
 # Once inside the allocation:
 # module load python
-# python 01_demo.py
-# srun python 01_demo.py
+# python workload.py
+# srun python workload.py
 
 # When done:
 # exit

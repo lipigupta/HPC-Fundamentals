@@ -1,24 +1,12 @@
 # HPC Fundamentals: First Job on a Shared System
 
-## Sources and AI-usage disclosure
-This course is based on: 
-Software Carpentries [Intro to HPC](https://github.com/carpentries-incubator/hpc-intro/) and HPC Carpentries [HPC Intro to Shell](https://github.com/hpc-carpentry/hpc-shell/)
+You will follow a research project from organizing a collaborator’s files to running, debugging, and choosing resources for jobs on a shared system.
 
-This course and the contents of this repository are under CC-BY 4.0 license. 
-
-AI was used to help in the creation of this course, to structure the lesson, create the scripts and exercises, refine the learning objectives, and prepare the readme files. 
-
-## Setting the Scene
-
-You are a new student or intern joining a research project. A collaborator has given you a messy project directory that contains data files, scripts, notes, old job outputs, and temporary files.
-
-Your job is to log in, copy the inherited project into your own workspace, use terminal commands to inspect and organize the files, run a small Python workload, submit it through Slurm, read the job output carefully when something fails, fix the application error, and see a small example of how requesting more CPUs can speed up a parallel workload.
-
-The Python examples are intentionally simple. You do **not** need to understand machine learning or PyTorch for this session. The Python script is the “payload” for the job.
+<br>
 
 ## Learning outcomes
 
-By the end of this session, you should be able to:
+By the end of this course, you should be able to:
 
 - Use basic terminal commands to navigate and organize files.
 - Copy an inherited project into your own workspace.
@@ -28,272 +16,114 @@ By the end of this session, you should be able to:
 - Read Slurm output files and distinguish application errors from scheduler messages.
 - Recognize that resource requests should match what your code can use.
 
+<br>
+
 ## Resources
-[NERSC Documentation](https://docs.nersc.gov/)
-[Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/)
 
-## 0. Before the workshop
+- [Command Reference](docs/command-reference.md)
+- [NERSC Documentation](https://docs.nersc.gov/)
+- [Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/)
+- [Instructor guide](instructor/README.md)
+- *[Canvas mapping and migration checklist](docs/canvas-map.md)*
 
-You should already be able to log in to the NERSC system before this session starts. We will not spend much time troubleshooting accounts, MFA, or SSH setup during the workshop.
+<br>
 
-## 1. Log in and create a workspace
+## Course modules
+
+| Canvas module | Materials |
+|---|---|
+| Module 1: NERSC Overview | [Overview](module-01-nersc-overview/README.md) |
+| Module 2: Text Terminal Basics | [Terminal practice](module-02-text-terminal-basics/README.md) |
+| Module 3: Running Jobs | [Batch, interactive, and debugging exercises](module-03-running-jobs/README.md) |
+| Module 4: Using Resources Effectively | [Existing CPU scaling demonstration](module-04-using-resources-effectively/README.md) |
+
+<b>
+
+## Before the workshop
+
+You should already be able to log in to the NERSC system before this session starts. Confirm that your account, multi-factor authentication (MFA), and SSH setup work. We will not spend much time troubleshooting access during the workshop. If you need help getting ready, start with the [Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/).
+
+<br>
+
+## Log in and create a workspace
+
+Open your terminal and log in using the SSH command supplied by your instructor. Run the following commands on the training system after logging in.
+
+You will make your own workspace so you can organize files, edit scripts, and save job output as you work. Your instructor will confirm the training project directory and the location of the shared course files. The example below uses the original workshop's `ntrain1` directory; substitute the path your instructor provides if it differs.
+
+### 1. Create your workspace
 
 ```bash
-cd $CFS/ntrain1
-mkdir <myname>
+cd "$CFS/ntrain1"
 pwd
 ```
 
-Your instructor will tell you where the shared training files are located. Copy them into your workspace.
+Choose a unique directory name, such as your NERSC username. In the next commands, replace `your_username` with that name:
 
 ```bash
-mkdir 
-cp -r /global/cfs/cdirs/ntrain1/RO_HPC_Fundamentals/ <myname>
+mkdir your_username
+cd your_username
+pwd
+```
+
+Check the path printed by `pwd`: you should be inside your own directory within the training project.
+
+### 2. Copy the course files
+
+Your instructor will tell you where the shared training files are located. Using the original workshop location as an example:
+
+```bash
+cp -R /global/cfs/cdirs/ntrain1/RO_HPC_Fundamentals HPC-Fundamentals
+cd HPC-Fundamentals
 ls
 ```
+
+Make sure you are copying the version with the module folders shown below. The shared training copy will need to be updated for this repository layout.
+
+If your instructor asks you to get the files from GitHub instead, run these commands **from your personal workspace**, in place of the copy commands above:
+
+```bash
+git clone https://github.com/lipigupta/HPC-Fundamentals.git
+cd HPC-Fundamentals
+ls
+```
+
+The GitHub commands retrieve the default branch. Until the module restructuring is merged, your instructor will need to provide the course branch or a prepared training copy containing these folders.
+
+### 3. Check your starting point
 
 You should see:
 
 ```text
 README.md
+docs/
 environment/
-example/
 instructor/
-messy_project/
-slurm_scripts/
+module-01-nersc-overview/
+module-02-text-terminal-basics/
+module-03-running-jobs/
+module-04-using-resources-effectively/
 ```
 
-## 2. The inherited messy project
+This directory is the **repository root**. When an exercise says to start from the repository root, it means this `HPC-Fundamentals` directory. Use `pwd` to check where you are and `ls` to see what is available.
 
-```bash
-cd ~/messy_project/
-pwd
-ls
-ls -l
-ls results_old
-ls temp
-find . -maxdepth 3 -type d
-```
+You now have your own copy of the course materials. Follow the module links above to begin. In Module 2, you will inspect the inherited messy project and organize its files. The Python examples are ready for the later job exercises; see the [environment notes](environment/README.md) for dependencies.
 
-This directory represents a common situation: someone has shared a project directory with you, but it is not organized for your new work yet.
-
-## 3. Organize the project enough to work with it
-
-This is not about designing the perfect file structure. The goal is to practice terminal basics and get the directory into a usable state.
-
-Your organization may look different from someone else’s. That is okay.
-
-## 4. A quick note about storage and quotas
-
-On a shared HPC system, storage is not unlimited. Storage limits are often called **quotas**. We will cover storage systems and quota policies in more detail in New User Training. For today, just notice that you can check how much space files use.
-
-```bash
-du -sh .
-du -sh *
-```
-
-The point for today is simple: organized files are easier to understand, easier to debug, and easier to clean up when you are working on a shared system.
-
-#Stop here - do not go further until instructed
-
-## 5. Move to the Python workload
-
-```bash
-cd ..
-ls example/
-```
-
-You should see:
-
-```text
-01_demo.py
-02_demo.py
-03_demo.py
-```
-
-## 6. Submit the first demo script.
-
-```bash
-cd examples/
-cat 01_batch.slurm
-sbatch 01_batch.slurm
-squeue -u $USER
-```
-
-This job may finish quickly. If it disappears from the queue, that usually means it is no longer running.
-
-## 7. While the batch job runs: interactive allocation
-
-Your instructor will provide the exact `salloc` command for the training system or reservation. A generic example looks like this:
-
-```bash
-salloc --account=nstaff --constraint cpu --qos shared --nodes 1 --ntasks 1 --cpus-per-task 2 --time=00:20:00
-```
-
-Once inside the allocation, try running the first demo directly:
-
-```bash
-python ../example/01_demo.py
-```
-
-Then try running it through Slurm:
-
-```bash
-srun python ../example/01_demo.py
-```
-
-For this simple example, the output may look very similar.
-
-```text
-python run.py        # runs Python directly where you are
-srun python run.py   # asks Slurm to launch Python using allocated resources
-```
-
-When you are done with the interactive allocation:
-
-```bash
-exit
-```
-
-## 8. Read the Slurm output carefully
-
-```bash
-ls slurm-*.out
-less 01_demo-<jobid>.out
-```
-
-In `less`:
-
-- Spacebar moves down.
-- `b` moves back up.
-- `/Traceback` searches for the word `Traceback`.
-- `q` quits.
-
-Look for this pattern:
-
-```text
-Training complete.
-
-Traceback (most recent call last):
-  File "../example/01_demo.py", line 26, in <module>
-    print(result)
-NameError: name 'result' is not defined
-```
-
-You may also see Slurm-related messages after the Python error.
-
-Important lesson:
-
-> Slurm launched the job. The Python application crashed.
-
-The actual problem is not “Slurm failed.” The application failed, and Slurm reported that the task exited with an error code.
-
-## 9. Fix the Python error then test it interactively.
-
-```bash
-python ../example/01_demo.py
-```
-
-## 10. Resubmit the fixed job
-
-```bash
-sbatch 01_demo.slurm
-squeue -u $USER
-ls slurm-*.out
-less 01_demo-<jobid>.out
-```
-
-Or submit the provided fixed version:
-
-```bash
-sbatch 02_demo.slurm
-```
-
-This time, the script should finish without the Python traceback.
-
-## 11. Optional: CPU scaling demo
-
-This short example shows that requesting more CPUs can reduce runtime **if the code is written to use those CPUs**.
-
-```bash
-sbatch 04_scale_1_cpu.slurm
-sbatch 05_scale_8_cpu.slurm
-sbatch 06_scale_32_cpu.slurm
-```
-
-When they finish, compare the output files:
-
-```bash
-grep Runtime slurm-scale-*.out
-```
-
-Expected pattern:
-
-```text
-1 CPU    -> slowest
-8 CPUs   -> faster
-32 CPUs  -> fastest
-```
-
-The exact times may vary.
-
-Important lesson:
-
-> Asking for more resources only helps if your application can use them.
-
-## Command reference
-
-### Navigation
-
-```bash
-pwd
-ls
-ls -l
-cd directory_name
-cd ..
-```
-
-### File and directory operations
-
-```bash
-mkdir new_directory
-mv oldname newname
-mv file directory/
-cp source destination
-cp -r source_directory destination_directory
-rmdir empty_directory
-rm filename
-```
-
-Be careful with `rm -r directory_name`: it removes a directory and everything inside it.
-
-### Inspecting files
-
-```bash
-cat filename
-less filename
-head filename
-tail filename
-```
-
-### Disk usage
-
-```bash
-du -sh .
-du -sh *
-```
-
-### Slurm basics
-
-```bash
-sbatch job_script.slurm
-squeue -u $USER
-srun command
-salloc --time=00:05:00 --nodes=1 --ntasks=1 --cpus-per-task=1
-```
+<br>
 
 ## Big idea
 
-This session is not about memorizing every command. The goal is to practice a common HPC workflow:
+This course is not about memorizing every command. The goal is to practice a common HPC workflow:
 
 > Access the system, understand your files, run your code, read the output, fix errors, and try again.
+
+<br>
+
+s<br>
+
+## Sources and Disclosure
+This course is based on: Software Carpentries [Intro to HPC](https://github.com/carpentries-incubator/hpc-intro/) and HPC Carpentries [HPC Intro to Shell](https://github.com/hpc-carpentry/hpc-shell/)
+
+This course and the contents of this repository are under CC-BY 4.0 license.
+
+AI was used to help in the creation of this course, to structure the lesson, create the scripts and exercises, refine the learning objectives, and prepare the README files.
