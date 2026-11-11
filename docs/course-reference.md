@@ -1,10 +1,42 @@
-# Command Reference
+# Course Reference
 
-This course is not about memorizing every command. Use this sheet when you need a reminder of how to move around, inspect files, or run a job.
+Use this course reference for command reminders and recommended reading, organized by module. This course is not about memorizing every command.
 
 <br>
 
-## Terminal Basics
+## Contents
+
+- [Module 1: NERSC Overview](#module-1-nersc-overview)
+- [Module 2: Text Terminal Basics](#module-2-text-terminal-basics)
+- [Module 3: Running Jobs](#module-3-running-jobs)
+- [Module 4: Using Resources Effectively](#module-4-using-resources-effectively)
+
+<br>
+
+## Module 1: NERSC Overview
+
+### Login and session checks
+
+| Command | What it does | Example |
+|---|---|---|
+| `whoami` | Prints the username for your current session. | `whoami` |
+| `hostname` | Prints the name of the machine running your shell. | `hostname` |
+| `exit` | Leaves the current shell; disconnects an SSH session when run in its login shell. | `exit` |
+
+Run `whoami` and `hostname` after logging in through SSH and in a JupyterLab terminal. Hostnames may differ between access methods or sessions.
+
+### Recommended resources
+
+- [Log In Using a Terminal](https://docs.nersc.gov/beginner-guide/#lock-and-key-log-in-using-a-terminal) — SSH login instructions.
+- [Log In Using Jupyter](https://docs.nersc.gov/beginner-guide/#keypad-entry-log-in-using-jupyter) — Browser login and terminal instructions.
+
+See the [NERSC documentation](https://docs.nersc.gov/) and [Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/) for an introduction to the systems and services used in this course.
+
+<br>
+
+## Module 2: Text Terminal Basics
+
+### Terminal basics
 
 - Replace example names such as `filename`, `directory_name`, and `job_script.slurm` with your own file or directory names.
 - Commands use your **current directory** unless you give another path. Use `pwd` to check where you are.
@@ -15,7 +47,7 @@ This course is not about memorizing every command. Use this sheet when you need 
 
 <br>
 
-## Navigate directories
+### Navigate directories
 
 | Command | What it does | Example |
 |---|---|---|
@@ -28,9 +60,15 @@ This course is not about memorizing every command. Use this sheet when you need 
 | `cd ~` | Moves to your home directory. | `cd ~` |
 | `find . -maxdepth 3 -type d` | Finds directories starting here, up to three levels down. | `find . -maxdepth 3 -type d` |
 
+### A warning about `find` on shared systems
+
+**Use `find` responsibly on shared storage.** Run this example only from your own `messy_project` directory. Before running it, use `pwd` to confirm your location. Avoid broad searches starting at `/`, `/global`, $CFS, or a shared project’s top-level directory.
+
+**The same responsibility applies when using AI assistants or coding agents.** Agents may launch broad or repeated searches automatically, multiplying filesystem activity and slowing access for other users. Explicitly restrict agents to the directories needed for your task, review proposed search commands, and stop unnecessary or repeated scans.
+
 <br>
 
-## Manage files
+### Manage files
 
 | Command | What it does | Example |
 |---|---|---|
@@ -48,7 +86,7 @@ Be careful with `rm -r directory_name`: it removes the directory and everything 
 
 <br>
 
-## Inspect files
+### Inspect files
 
 | Command | What it does | Example |
 |---|---|---|
@@ -60,7 +98,7 @@ Be careful with `rm -r directory_name`: it removes the directory and everything 
 
 <br>
 
-## Moving around in `less`
+### Moving around in `less`
 
 | Key | What it does |
 |---|---|
@@ -72,7 +110,7 @@ Be careful with `rm -r directory_name`: it removes the directory and everything 
 
 <br>
 
-## Check storage usage
+### Check storage usage
 
 | Command | What it does | Example |
 |---|---|---|
@@ -83,7 +121,9 @@ Be careful with `rm -r directory_name`: it removes the directory and everything 
 
 <br>
 
-## Run and monitor jobs
+## Module 3: Running Jobs
+
+### Run and monitor jobs
 
 Run these commands on the training system. Use the account, QOS, constraint, and reservation details supplied by your instructor. Run each exercise's batch script from its exercise directory so it can find `workload.py`.
 
@@ -102,3 +142,20 @@ A job leaving the queue does not establish success. Find the output file using t
 > Slurm launched the job. The Python application crashed.
 
 A Python traceback helps you identify an application error. See [Diagnose and fix](../module-03/exercises/diagnose-and-fix/README.md) for the guided example.
+
+
+### Recommended resources
+
+- [Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/) — Introduces foundational computing concepts and explains technical topics in an approachable way for learners with limited computing experience.
+- [Compute Nodes](https://docs.nersc.gov/beginner-guide/#cooking-with-fire-compute-nodes) — Explains how compute nodes provide the resources needed to run applications on NERSC systems.
+- [Job Scheduling](https://docs.nersc.gov/beginner-guide/#household-calendar-preparing-and-submitting-slurm-job-scripts) — Introduces Slurm job scheduling and how jobs are submitted to request computing resources.
+
+<br>
+
+## Module 4: Using Resources Effectively
+
+### Recommended resources
+
+- [Compute Nodes](https://docs.nersc.gov/beginner-guide/#cooking-with-fire-compute-nodes) — Introduces CPUs, cores, and how computing resources can perform work in parallel.
+- [Basics of Running Jobs](https://docs.nersc.gov/jobs/) — Explains how Slurm allocates computing resources and how job requests specify the number of tasks and CPUs.
+- [Example Job Scripts](https://docs.nersc.gov/jobs/examples/) *(Optional)* — Provides examples of serial and parallel applications running on Perlmutter, illustrating how different workloads require different resource requests.
