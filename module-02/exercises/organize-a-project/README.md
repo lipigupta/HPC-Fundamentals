@@ -38,6 +38,14 @@ As you look around, ask yourself: which files belong together? Which look like d
 
 <br>
 
+### A warning about `find` on shared systems
+
+**Use `find` responsibly on shared storage.** Run this example only from your own `messy_project` directory. Before running it, use `pwd` to confirm your location. Avoid broad searches starting at `/`, `/global`, $CFS, or a shared project’s top-level directory.
+
+**The same responsibility applies when using AI assistants or coding agents.** Agents may launch broad or repeated searches automatically, multiplying filesystem activity and slowing access for other users. Explicitly restrict agents to the directories needed for your task, review proposed search commands, and stop unnecessary or repeated scans.
+
+<br>
+
 ## 2. Organize the project enough to work with it
 
 This is not about designing the perfect file structure. The goal is to practice terminal basics and get the directory into a usable state.

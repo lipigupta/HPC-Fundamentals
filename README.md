@@ -1,6 +1,12 @@
 # HPC Fundamentals: First Job on a Shared System
 
-You will follow a research project from organizing a collaborator’s files to running, debugging, and choosing resources for jobs on a shared system.
+## About this course
+
+You are a new student or intern joining a research project. A collaborator has given you a messy project directory that contains data files, scripts, notes, old job outputs, and temporary files.
+
+Your job is to log in, copy the inherited project into your own workspace, use terminal commands to inspect and organize the files, run a small Python workload, submit it through Slurm, read the job output carefully when something fails, fix the application error, and see a small example of how requesting more CPUs can speed up a parallel workload.
+
+The Python examples are intentionally simple. You do **not** need to understand machine learning or PyTorch for this session. The Python script is the “payload” for the job.
 
 <br>
 
@@ -22,7 +28,7 @@ By the end of this course, you should be able to:
 
 - [NERSC Documentation](https://docs.nersc.gov/)
 - [Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/)
-- [Command Reference](docs/command-reference.md)
+- [Course Reference](docs/course-reference.md)
 - [Instructor guide](instructor/README.md)
 - *[Canvas mapping and migration checklist](docs/canvas-map.md)*
 
@@ -41,7 +47,7 @@ By the end of this course, you should be able to:
 
 ## Before the workshop
 
-You should already be able to log in to the NERSC system before this session starts. Confirm that your account, multi-factor authentication (MFA), and SSH setup work. We will not spend much time troubleshooting access during the workshop. If you need help getting ready, start with the [Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/).
+You should already be able to log in to the NERSC system before this session starts. Complete the [Module 1 login practice](module-01/exercises/log-in/README.md) to confirm that your account, multi-factor authentication (MFA), SSH access, and Jupyter access work. We will not spend much time troubleshooting access during the workshop. If you need help getting ready, start with the [Absolute Beginner's Guide](https://docs.nersc.gov/beginner-guide/).
 
 <br>
 
@@ -50,6 +56,12 @@ You should already be able to log in to the NERSC system before this session sta
 Open your terminal and log in using the SSH command supplied by your instructor. Run the following commands on the training system after logging in.
 
 You will make your own workspace so you can organize files, edit scripts, and save job output as you work. Your instructor will confirm the training project directory and the location of the shared course files. The example below uses the original workshop's `ntrain1` directory; substitute the path your instructor provides if it differs.
+
+
+
+> **Course maintenance note:** Update these setup instructions once the CFS onboarding workflow is established. Students should access the course files from the shared CFS project space. Confirm the project path, access requirements, and steps for creating a personal working copy before teaching.
+
+
 
 ### 1. Create your workspace
 
@@ -116,8 +128,6 @@ You now have your own copy of the course materials. Follow the module links abov
 This course is not about memorizing every command. The goal is to practice a common HPC workflow:
 
 > Access the system, understand your files, run your code, read the output, fix errors, and try again.
-
-<br>
 
 <br>
 
